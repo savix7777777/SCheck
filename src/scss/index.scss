@@ -1,0 +1,45 @@
+a{
+  color: white;
+  text-decoration: none;
+}
+@import "reset";
+@import "./fonts/fonts";
+@import "sections/about";
+@import "sections/main";
+@import "components/input-file";
+@import "components/input-fileHandle";
+@import "sections/settings";
+@import "sections/treatment";
+@import "components/loading";
+@import "sections/results";
+@import "components/document-result";
+
+
+button{
+  outline: none;
+}
+
+header{
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background: linear-gradient(90deg, rgba(142, 197, 252, 1) 0.08%, rgba(224, 195, 252, 1) 91.06%) no-repeat;
+  color: white;
+  font-family: HelveticaNeueCyr;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.header__content{
+  width: 60%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-left: 2.5%;
+
+  & p{
+    padding-bottom:1px;
+  }
+}

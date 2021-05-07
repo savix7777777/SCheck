@@ -1,0 +1,134 @@
+.settings{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  background: linear-gradient(89.92deg, #8EC5FC 0.08%, #E0C3FC 91.06%) no-repeat;
+  background-size: cover;
+  height: 100vh;
+  padding: 2% 0;
+  font-family: HelveticaNeueCyr;
+  position: relative;
+  overflow: scroll;
+
+  &__arr-right{
+    position: absolute;
+    background-color: #8EC5FC;
+    border-radius: 50%;
+    border: 1px solid #FFFFFF;
+    color: white;
+    height: 30px;
+    width: 30px;
+    top: 11%;
+    left: 12%;
+    cursor: pointer;
+    transition: 0.5s;
+  }
+
+  &__arr-right:hover{
+    background-color: white;
+    color: #8EC5FC;
+    border-color: #8EC5FC;
+  }
+
+  &__confirm-button{
+    font-size: 16px;
+    line-height: 16px;
+    height: 4em;
+    margin-top: 2.5%;
+    width: 15% !important;
+  }
+
+  &__main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border-radius: 10px;
+    width: 50%;
+    height: 8em;
+  }
+
+  &__key-words{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border-radius: 10px;
+    width: 50%;
+    height: 8em;
+
+    &__text{
+      color: #8EC5FC;
+      font-size: 16px;
+      line-height: 35px;
+      width: 100%;
+      text-align: start;
+      margin-left: 20%;
+    }
+
+    &-subBox{
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+      width: 50%;
+      height: 5em;
+    }
+  }
+
+  &__first-box{
+    width: 50%;
+    background-color: white;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    border-radius: 10px;
+    height: 4.3em;
+
+    &__counter{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-left: 37%;
+
+      &__text{
+        color: #3F3D56;
+        font-size: 14px;
+        line-height: 14px;
+        padding: 0 20%;
+      }
+
+      &__button{
+        border: none;
+        background-color: white;
+        color: #8EC5FC;
+        font-size: 18px;
+        line-height: 14px;
+        cursor: pointer;
+        transition: 0.5s;
+      }
+
+      &__button:hover{
+        transform: scale(1.7);
+      }
+    }
+
+    &__text-size{
+      color: #8EC5FC;
+      font-size: 16px;
+      line-height: 35px;
+      margin-left: 5%;
+    }
+  }
+
+  &__h2{
+    width: 50%;
+    font-size: 18px;
+    line-height: 18px;
+    color: white;
+    padding-bottom: 1.5%;
+    margin-top: 2.5%;
+  }
+}

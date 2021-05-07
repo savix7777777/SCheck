@@ -1,0 +1,24 @@
+.treatment{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  background: linear-gradient(89.92deg, #8EC5FC 0.08%, #E0C3FC 91.06%) no-repeat;
+  background-size: cover;
+  height: 100vh;
+  font-family: HelveticaNeueCyr;
+  position: relative;
+  overflow: scroll;
+
+  &__text{
+    color: white;
+    font-family: HelveticaNeueCyr;
+    font-weight: 550;
+    font-size: 22px;
+    line-height: 35px;
+    letter-spacing: 0.03em;
+    margin-top: 1%;
+    margin-bottom: 8%;
+  }
+}

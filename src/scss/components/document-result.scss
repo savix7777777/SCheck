@@ -1,0 +1,49 @@
+.document-result{
+  width: 50%;
+  height: 19em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  padding-bottom: 4%;
+  font-family: HelveticaNeueCyr;
+
+  &__keyWords-line{
+    width: 80%;
+    display: flex;
+    align-items: start;
+    justify-content: flex-start;
+
+    &__box{
+      width: 65%;
+      height: 3em;
+      overflow: scroll;
+      color: #3F3D56;
+      font-size: 14px;
+      line-height: 14px;
+    }
+  }
+
+  &__value-text{
+    font-size: 14px;
+    color: black;
+    letter-spacing: 0.03em;
+    margin-left: 8%;
+  }
+
+  &__line-text{
+    width: 80%;
+    text-align: start;
+    color: #8EC5FC;
+    font-size: 14px;
+    line-height: 35px;
+  }
+
+  &__number-text{
+    text-align: center;
+    color: #8EC5FC;
+    font-size: 16px;
+    line-height: 35px;
+    letter-spacing: 0.03em;
+  }
+}

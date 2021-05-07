@@ -1,0 +1,147 @@
+.about{
+  width: 100%;
+  overflow: scroll;
+
+  &__second-box{
+    width: 100%;
+    position: relative;
+    font-family: ProximaNova;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    font-size: 22px;
+    line-height: 40px;
+    color: #3F3D56;
+    letter-spacing: 0.03em;
+
+    &__about-1{
+      position: absolute;
+      right: 28%;
+      top: 18%;
+    }
+
+    &__arrow-1{
+      position: absolute;
+      top: 27%;
+      right: 48%;
+    }
+
+    &__about-2{
+      position: absolute;
+      top: 45%;
+      left: 3%;
+    }
+
+    &__arrow-2{
+      position: absolute;
+      top: 60%;
+    }
+
+    &__about-3{
+      right: 1%;
+      position: absolute;
+      top: 69%;
+    }
+
+    &__arrow-3{
+      position: absolute;
+      top: 89%;
+      right: 39%;
+    }
+
+    &__about-4{
+      position: absolute;
+      top: 100%;
+      left: 6%;
+      padding-bottom: 7%;
+    }
+
+    &__content-right, &__content-left{
+      width: 80%;
+      min-height: 16em;
+      display: flex;
+      align-items: center;
+
+      & p{
+        width: 35%;
+      }
+    }
+
+    &__content-right{
+      justify-content: flex-end;
+    }
+
+    &__content-left{
+      justify-content: flex-start;
+    }
+  }
+
+  &__first-box{
+    background: linear-gradient(90deg, #8EC5FC 0.08%, #E0C3FC 91.06%) no-repeat;
+    background-size: cover;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+    color: white;
+    position: relative;
+    height: 100vh;
+
+    &__bubbles{
+      position: absolute;
+      right: 0;
+      height: 85%;
+      top: 14%;
+    }
+
+    &__content{
+      width: 60%;
+      height: 27em;
+      margin-left: 10%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+    }
+
+    &__h1{
+      font-family: ProximaNova;
+      font-size: 48px;
+      font-weight: 600;
+      line-height: 55px;
+    }
+
+    &__p{
+      font-family: HelveticaNeueCyr;
+      font-size: 18px;
+      line-height: 35px;
+      font-weight: 400;
+    }
+
+    &__button{
+      background-color: #FE66B8;
+      color: white;
+      border-radius: 10px;
+      border: none;
+      height: 3em;
+      width: 30%;
+      font-size: 18px;
+      font-family: HelveticaNeueCyr;
+      transition: 0.5s;
+      cursor: pointer;
+
+      &-box{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+
+    &__button:hover{
+      background-color: #D22E87;
+    }
+  }
+}

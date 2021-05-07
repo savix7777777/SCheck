@@ -1,0 +1,56 @@
+.drop-area{
+  width: 50%;
+  height: 22em;
+  background: rgba(255, 255, 255, 0.8);
+  font-family: HelveticaNeueCyr, sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  border: 3px double #8EC5FC;
+  border-radius: 10px;
+  margin-top: 1.5%;
+  position: relative;
+
+  &__text-box{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    color: #8EC5FC;
+    font-size: 18px;
+    line-height: 18px;
+    height: 55%;
+    margin-top: 6%;
+  }
+
+  & h1{
+    text-align: center;
+    line-height: 30px;
+  }
+
+  &__button{
+    width: 34%;
+    font-size: 16px;
+    transition: 0.5s;
+    position: absolute;
+    bottom: 17.4%;
+  }
+}
+
+input[type='file'] {
+  opacity: 0;
+  position: absolute;
+  bottom: 17.4%;
+  width: 34%;
+  height: 3.7em;
+  border-radius: 10px;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.disabled{
+  background-color: #E6E6E6 !important;
+  cursor: default !important;
+  z-index: 2;
+}
