@@ -12,7 +12,7 @@ const Treatment = ({files,settings}) => {
     if (treatmentCounter !== 1) {
         setTreatmentCounter(1);
         [[summary_1, summary_2], [keywords_1, keywords_2]] = analyzeTexts(files, settings);
-        //checkForPlagiarism(files, summary_1, summary_2, settings);
+        checkForPlagiarism(files, summary_1, summary_2, settings);
         setLoadingState(false);
     }
 

@@ -1,0 +1,38 @@
+.navigation-desk{
+  position: absolute;
+  display: flex;
+  color: white;
+  font-size: 18px;
+  line-height: 40px;
+  letter-spacing: 0.03em;
+  font-family: ProximaNova;
+  width: 80%;
+  bottom: 6%;
+
+  &__first{
+    background: #FE66B8;
+    height: 3.5em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 25%;
+    clip-path: polygon(0 0, 85% 0, 100% 50%, 85% 100%, 0 100%);
+  }
+
+  &__second{
+    clip-path: polygon(0 0, 85% 0, 100% 50%, 85% 100%, 0 100%, 15% 50%);
+  }
+}
+
+.third{
+  width: 30%;
+  clip-path: polygon(0 0, 90% 0, 100% 50%, 90% 100%, 0 100%, 10% 50%);
+}
+
+.first{
+  transition: 0.5s;
+}
+
+.first:hover{
+  background-color: #E0C3FC;;
+}

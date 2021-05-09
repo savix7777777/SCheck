@@ -56,7 +56,7 @@ const Settings = ({setSettings}) => {
                 </div>
             </div>
             <h2 className='settings__h2'>Налаштування перевірки документів на близькість</h2>
-            <div className='settings__main' style={{height: '12em'}}>
+            <div className='settings__main' style={{height: '8em'}}>
                 <div className='settings__key-words-subBox' style={{height: '6em'}}>
                     <p className='settings__key-words__text'>Перевірка на основі стиснення</p>
                     <p className='settings__key-words__text'>Вивести кількість слів </p>

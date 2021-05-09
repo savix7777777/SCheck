@@ -13,7 +13,12 @@ a{
 @import "components/loading";
 @import "sections/results";
 @import "components/document-result";
+@import "components/navigation-desk";
 
+
+.app{
+  position: relative;
+}
 
 button{
   outline: none;
