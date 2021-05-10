@@ -81,7 +81,7 @@ function evaluateSentences(paragraphs)  {
             for (let k = 0; k < paragraphs[i][j].tokens.length; k++) {
                  mark_relevance += paragraphs[i][j].tokens[k].frequency;
             }
-            paragraphs[i][j].relevance = mark_relevance;
+            paragraphs[i][j].relevance = mark_relevance/paragraphs[i][j].tokens.length;
         }
     }
 }

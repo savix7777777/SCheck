@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import Loading from "../../components/Loading";
 import analyzeTexts from "../../js/analyzeTexts.js";
-import checkForPlagiarism from "../../js/checkForPlagiarism.js";
+import {detectPlagiarismDice, detectPlagiarismShingles} from "../../js/detectPlagiarism.js";
 
 
 const Treatment = ({files,settings}) => {
@@ -12,7 +12,9 @@ const Treatment = ({files,settings}) => {
     if (treatmentCounter !== 1) {
         setTreatmentCounter(1);
         [[summary_1, summary_2], [keywords_1, keywords_2]] = analyzeTexts(files, settings);
-        checkForPlagiarism(files, summary_1, summary_2, settings);
+        //let resultPlagiarism = detectPlagiarismShingles(files, summary_1, summary_2, settings);
+        let resultPlagiarism = detectPlagiarismDice(files, summary_1, summary_2, settings);
+        console.log(resultPlagiarism);
         setLoadingState(false);
     }
 
