@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import About from "./sections/About";
 import {Route, useLocation} from "react-router";
 import Main from "./sections/Main";
@@ -14,7 +14,12 @@ const App = () => {
 
     const location  = useLocation();
 
+    useEffect(() => {
+        !localStorage.getItem('history') && localStorage.setItem('history',JSON.stringify([]));
+    });
+
     const [filesStore, setFilesStore] = useState([]);
+    const [newTexts, setNewTexts] = useState(['','']);
     const [settings,setSettings] = useState({
         compSize: 7,
         showKeyWords: true,
@@ -23,7 +28,7 @@ const App = () => {
         showWordsCounter: false,
         showSignCounter: false,
     });
-    const [percent, setPercent] = useState(20);
+    const [percent, setPercent] = useState(-1);
     const [keyWords, setKeyWords] = useState([
         ['lorem','ipsum','dolor','sit','amet'],
         ['consectetur', 'adipiscing', 'elit', 'suspendisse', 'quis']
@@ -43,10 +48,10 @@ const App = () => {
                     <Settings setSettings={setSettings} />
                 </Route>
                 <Route exact path={'/treatment'}>
-                    <Treatment files={filesStore} settings={settings} />
+                    <Treatment setNewTexts={setNewTexts} setPercent={setPercent} setKeyWords={setKeyWords} files={filesStore} settings={settings} />
                 </Route>
                 <Route exact path={'/results'}>
-                    <Results keyWords={keyWords} percent={percent} files={filesStore} settings={settings} />
+                    <Results newTexts={newTexts} keyWords={keyWords} percent={percent} files={filesStore} settings={settings} />
                 </Route>
                 {location.pathname !== '/' && <NavigationDesk />}
             </div>

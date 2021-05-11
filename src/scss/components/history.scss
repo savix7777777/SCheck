@@ -1,0 +1,86 @@
+.history{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: white;
+  height: 20em;
+  width: 27%;
+  position: absolute;
+  right: 10%;
+  top: 0%;
+  border-radius: 10px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  transition: 0.5s;
+  padding: 30px;
+  font-family: HelveticaNeueCyr;
+  overflow: scroll;
+
+  &__file-names{
+    font-size: 14px;
+    line-height: 14px;
+    color: #8EC5FC;
+    width: 40%;
+    overflow: scroll;
+    white-space: nowrap;
+    margin-top: 5%;
+  }
+
+  &__file-names::-webkit-scrollbar{
+    width: 0;
+  }
+
+  &__text{
+    font-size: 14px;
+    line-height: 14px;
+    letter-spacing: 0.03em;
+    color: #3F3D56;
+  }
+
+  &__percent{
+    color: #3F3D56;
+    font-weight: 550;
+    font-size: 18px;
+    line-height: 18px;
+  }
+
+  &__data-box{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5%;
+  }
+
+  &__first-line{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+
+  &__second-line{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-top: -2%;
+  }
+
+  &__black-line{
+    width: 50%;
+    height: 1px;
+    background-color: #3F3D56;
+  }
+
+  &__h2{
+    width: 100%;
+    text-align: start;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 22px;
+    color: #3F3D56;
+    font-family: ProximaNova;
+  }
+}

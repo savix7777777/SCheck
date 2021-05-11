@@ -3,7 +3,7 @@
   height: 19em;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: flex-start;
   align-items: center;
   padding-bottom: 4%;
   font-family: HelveticaNeueCyr;
@@ -15,8 +15,8 @@
     justify-content: flex-start;
 
     &__box{
-      width: 65%;
-      height: 3em;
+      width: 70%;
+      height: 3.5em;
       overflow: scroll;
       color: #3F3D56;
       font-size: 14px;

@@ -14,6 +14,7 @@ a{
 @import "sections/results";
 @import "components/document-result";
 @import "components/navigation-desk";
+@import "components/history";
 
 
 .app{
@@ -46,5 +47,17 @@ header{
 
   & p{
     padding-bottom:1px;
+  }
+}
+
+.header__history-switcher{
+  position: absolute;
+  right: 10%;
+  top: 40%;
+  cursor: pointer;
+
+  & i{
+    font-size: 12px;
+    transition: 0.5s;
   }
 }

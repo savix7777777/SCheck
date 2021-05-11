@@ -1,14 +1,20 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import logo from '../../scss/img/logo-black.svg'
 import DocumentResult from "../../components/DocumentResult";
 import Button from "../../components/Button";
 import jsPDF from "jspdf";
 import html2canvas from "html2canvas";
+import {useDispatch} from "react-redux";
+import {createDocData} from "../../store/actions/actionCreator";
 
 
-const Results = ({keyWords, percent, files, settings}) => {
+const Results = ({newTexts, keyWords, percent, files, settings}) => {
+
+    const dispatch = useDispatch();
 
     const [showText, setShowText] = useState(false);
+
+    const sendDocData = (value) => dispatch(createDocData(value))
 
     const date = new Date();
 
@@ -19,6 +25,36 @@ const Results = ({keyWords, percent, files, settings}) => {
             return func
         }
     };
+
+    useEffect(() => {
+        sendDocData({
+            percent,
+            files,
+            date: `${createDate(date.getDate())}.${createDate(date.getMonth())}.${date.getFullYear()} ${createDate(date.getHours())}:${createDate(date.getMinutes())}:${createDate(date.getSeconds())} EEST`
+        })
+        const newHistory = (JSON.parse(localStorage.getItem('history'))).slice();
+        if(percent >= 0){
+            if(newHistory.length !==0){
+                if(newHistory[newHistory.length-1].percent !== percent){
+                    newHistory.push({
+                        percent,
+                        files,
+                        date: `${createDate(date.getDate())}.${createDate(date.getMonth())}.${date.getFullYear()} ${createDate(date.getHours())}:${createDate(date.getMinutes())}:${createDate(date.getSeconds())} EEST`
+                    });
+                    localStorage.setItem('history',JSON.stringify(newHistory));
+                }
+            } else {
+                newHistory.push({
+                    percent,
+                    files,
+                    date: `${createDate(date.getDate())}.${createDate(date.getMonth())}.${date.getFullYear()} ${createDate(date.getHours())}:${createDate(date.getMinutes())}:${createDate(date.getSeconds())} EEST`
+                });
+                localStorage.setItem('history',JSON.stringify(newHistory));
+            }
+        }
+    });
+
+
 
     const generatePDF = () => {
         html2canvas(document.querySelector('#results-box')).then((canvas) => {
@@ -35,14 +71,14 @@ const Results = ({keyWords, percent, files, settings}) => {
                 <div className='results__header'>
                     <img alt='logo' src={logo}/>
                     <div className='results__header__percents'>
-                        <h2>{percent}% Схожість</h2>
+                        <h2>{percent.toFixed(2)}% Схожість</h2>
                         <div className='results__header__percents-box'>
                             <div style={{width: `${percent}%`}} className='results__header__percents-value'> </div>
                         </div>
                     </div>
                 </div>
                 <div className='results__date'>
-                    <p className='results__date__text'>Дата перевірки:<span className='results__date__value'>{createDate(date.getDate())}.{createDate(date.getMonth())}.{date.getFullYear()} {createDate(date.getHours())}:{createDate(date.getMinutes())}:{createDate(date.getSeconds())}</span></p>
+                    <p className='results__date__text'>Дата перевірки:<span className='results__date__value'>{createDate(date.getDate())}.{createDate(date.getMonth())}.{date.getFullYear()} {createDate(date.getHours())}:{createDate(date.getMinutes())}:{createDate(date.getSeconds())} EEST</span></p>
                 </div>
                 <div className='results__main'>
                     {files.map((elem, index) => {
@@ -61,9 +97,9 @@ const Results = ({keyWords, percent, files, settings}) => {
             {showText && <div className='results__show-text'>
                 <div className='results__show-text__main'>
                     <h2>Документ #1</h2>
-                    <div className='results__show-text__main__text-value'>{files[0].value}</div>
+                    <div className='results__show-text__main__text-value'>{newTexts[0]}</div>
                     <h2>Документ #2</h2>
-                    <div className='results__show-text__main__text-value'>{files[1].value}</div>
+                    <div className='results__show-text__main__text-value'>{newTexts[1]}</div>
                 </div>
                 <Button onClick={() => setShowText(false)} className='about__first-box__button results__show-text__btn'>Повернутися назад</Button>
             </div>}

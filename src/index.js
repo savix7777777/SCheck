@@ -4,16 +4,19 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {Provider} from "react-redux";
 import store from "./store/store";
-import {BrowserRouter} from "react-router-dom";
+import {HashRouter} from "react-router-dom";
 
 
 ReactDOM.render(
   <React.StrictMode>
-      <BrowserRouter>
+      <HashRouter
+          hashType={"slash"}
+          basename={"s-check"}
+      >
         <Provider store={store}>
            <App />
         </Provider>
-      </BrowserRouter>
+      </HashRouter>
   </React.StrictMode>,
   document.getElementById('root')
 );
